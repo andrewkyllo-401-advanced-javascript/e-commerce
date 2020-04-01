@@ -25,6 +25,8 @@ const voteCounter = (allCandidates = initialState, action) => {
           ? { ...candidate, votes: candidate.votes - 1 }
           : candidate
       );
+    case 'ADD_CANDIDATE':
+      return [...allCandidates, { name: action.payload, votes: 0 }]
     case 'RESET':
       return initialState;
     default:

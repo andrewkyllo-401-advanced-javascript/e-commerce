@@ -1,10 +1,10 @@
-import React from 'react';
-import { Table, Button } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { increment, decrement, reset } from '../../actions';
+import React from "react";
+import { Table, Button } from "react-bootstrap";
+import { connect } from "react-redux";
+import { increment, decrement, reset } from "../../actions";
 
 const mapStateToProps = state => {
-  return { 
+  return {
     candidates: state.candidates,
     totalVotes: state.totalVotes
   };
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = { increment, decrement, reset };
 
-const Voter = ({ candidates, totalVotes, decrement, reset }) => {
+const Voter = ({ candidates, totalVotes, increment, decrement, reset }) => {
   return (
     <section className="Voter">
       <Table variant="sm" striped bordered>

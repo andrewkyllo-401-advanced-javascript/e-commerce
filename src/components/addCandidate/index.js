@@ -1,19 +1,22 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
+import { useForm } from 'react-hook-form'
+import { addCandidate } from '../../actions'
+import { connect } from 'react-redux'
 
-const AddCandidate = () => {
-  const handleSubmit = e => {
-    e.preventDefault(); 
-    console.log(e);
+const AddCandidate = ({ addCandidate }) => {
+  const { register, handleSubmit, reset } = useForm()
+  const onSubmit = data => {
+    addCandidate(data.name)
+    reset()
   }
+  
   return (
-    <section className="AddCandidate">
-      <Form onSubmit={handleSubmit}>
-        <Form.Control type="text" name="name" placeholder="New Caniddate" />
-          <Button value="submit">Add New Caniddate</Button>
-      </Form>
-    </section>
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form.Control type="text" placeholder="Name" name="name" ref={register} />
+        <Button type="submit">Add New AddCandidate</Button>
+    </Form>
   )
 }
 
-export default AddCandidate
+export default connect(null, { addCandidate })(AddCandidate)
