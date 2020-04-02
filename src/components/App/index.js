@@ -4,11 +4,13 @@ import { Container } from 'react-bootstrap'
 // import Voter from '../Voter'
 import store from '../Store'
 import { Provider } from 'react-redux'
-import AddCandidate from '../addCandidate'
+// import AddCandidate from '../addCandidate'
 import Header from '../Header';
 import Footer from '../Footer';
 import Categories from '../Categories';
 import Product from '../Products'
+import AddProduct from '../AddProduct';
+import SimpleCart from '../SimpleCart'
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
       <Container className="App">
         <Header />
         <Categories />
+        <SimpleCart />
         <Product />
+        <AddProduct />
         {/* <Voter /> */}
-        <AddCandidate />
+        {/* <AddCandidate /> */}
         <Footer />
       </Container>
     </Provider>

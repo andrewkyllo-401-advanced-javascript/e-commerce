@@ -1,17 +1,13 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import { deleteProduct } from "../../actions";
+import { deleteProduct, addToCart } from "../../actions";
 
 const mapStateToProps = state => {
-    console.log(state.categories)
-    console.log(state.products[0].category)
-    let somith = state.products.filter(product => product.category === state.categories)
-    console.log(somith)
-  
+  console.log('hello')
   return {
     products:
-      state.categories === 'All'
+      state.categories === "All"
         ? state.products
         : state.products.filter(
             product => product.category === state.categories
@@ -20,9 +16,9 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = { deleteProduct };
+const mapDispatchToProps = { deleteProduct, addToCart };
 
-const Product = ({ products, deleteProduct }) => {
+const Product = ({ products, deleteProduct, addToCart }) => {
   return (
     <section className="Product">
       <Table variant="sm" striped bordered>
@@ -30,6 +26,9 @@ const Product = ({ products, deleteProduct }) => {
           <tr>
             <th>Product</th>
             <th>Category</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -37,9 +36,22 @@ const Product = ({ products, deleteProduct }) => {
             <tr key={product.name}>
               <td>{product.name}</td>
               <td>{product.category}</td>
+              <td>{product.description}</td>
+              <td>{product.stock}</td>
+              <td>{product.price}</td>
               <td>
                 <Button
                   variant="outline-primary"
+                  onClick={() => {
+                    addToCart(product);
+                  }}
+                >
+                  Add To Cart
+                </Button>
+              </td>
+              <td>
+                <Button
+                  variant="outline-danger"
                   onClick={() => {
                     deleteProduct(product);
                   }}
