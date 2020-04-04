@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import './Header.scss'
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +11,7 @@ const mapStateToProps = state => {
 const Header = ({ shoppingCart }) => {
   return (
     <div className="Header">
-      AmazNom ({shoppingCart.length})
+      AmazNom (<span className="cart-num">{shoppingCart.length}</span>)
     </div>
   )
 }

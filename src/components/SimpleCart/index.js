@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Table, Button } from 'react-bootstrap'
-import { removeFromCart } from '../../actions'
+import { removeFromCart, addToStock } from '../../actions'
 
 
 const mapStateToProps = state => {
@@ -34,6 +34,7 @@ const SimpleCart = ({ shoppingCart, removeFromCart }) => {
                   variant='outline-danger'
                   onClick={() => {
                     removeFromCart(product)
+                    addToStock(product)
                   }}
                 >
                   Remove From Cart

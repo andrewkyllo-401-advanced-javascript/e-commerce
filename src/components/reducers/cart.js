@@ -5,7 +5,9 @@ export const shoppingCart = [
 const cartHandler = (state = shoppingCart, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      return [...state, action.payload];
+      return !state.includes(action.payload)
+        ? [...state, action.payload]
+        : state
     case "REMOVE_FROM_CART":
       return state.filter(product => product !== action.payload);
     default:

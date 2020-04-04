@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Table, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import { deleteProduct, addToCart } from "../../actions";
+import { deleteProduct, addToCart, getAllProducts } from "../../actions";
 
 const mapStateToProps = state => {
-  console.log('hello')
   return {
     products:
       state.categories === "All"
@@ -16,9 +15,13 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = { deleteProduct, addToCart };
+const mapDispatchToProps = { getAllProducts, deleteProduct, addToCart };
 
-const Product = ({ products, deleteProduct, addToCart }) => {
+const Product = ({ getAllProducts, products, deleteProduct, addToCart }) => {
+  const productFetcher = function() {
+    getAllProducts();
+  };
+  useEffect(() => productFetcher(), []); //eslint-disable-line
   return (
     <section className="Product">
       <Table variant="sm" striped bordered>
@@ -44,6 +47,7 @@ const Product = ({ products, deleteProduct, addToCart }) => {
                   variant="outline-primary"
                   onClick={() => {
                     addToCart(product);
+                    deleteProduct(product);
                   }}
                 >
                   Add To Cart
