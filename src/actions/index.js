@@ -1,5 +1,33 @@
 // These functions are called 'action creators' since they just create an object that represents an action
 
+export function getAllProducts() {
+  return async function(dispatch) {
+    const raw = await fetch('http://localhost:3001/products')
+    const data = await raw.json()
+    return dispatch(getAllProductsAction(data))
+  }
+}
+
+export function addToStock(data) {
+  return {
+    type: "ADD_TO_STOCK",
+    payload: data
+  }
+}
+
+export function changeView() {
+  return {
+    type: 'CHANGE_VIEW'
+   } 
+}
+
+function getAllProductsAction(data) {
+  return {
+    type: 'GET_ALL_PRODUCTS',
+    payload: data
+  }
+}
+
 export function addProduct(product) {
   return {
     type: 'ADD_PRODUCT',
@@ -10,6 +38,20 @@ export function addProduct(product) {
 export function deleteProduct(product) {
   return {
     type: 'DELETE_PRODUCT',
+    payload: product
+  }
+}
+
+export function addToCart(product) {
+  return {
+    type: 'ADD_TO_CART',
+    payload: product
+  }
+}
+
+export function removeFromCart(product) {
+  return {
+    type: 'REMOVE_FROM_CART',
     payload: product
   }
 }

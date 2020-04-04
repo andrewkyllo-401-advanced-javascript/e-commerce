@@ -1,0 +1,24 @@
+{
+  "products": [
+    { "id":1, "name": "Furbie", "category": "Animals", "description": "Brown and furry", "stock": 34, "price": 34 },
+    { "id":2, "name": "Fox", "category": "Animals", "description": "Red and furry", "stock": 34, "price": 34 },
+    { "id":3, "name": "Flamingo", "category": "Animals", "description": "Pink and furry", "stock": 34, "price": 34 },
+    { "id":4, "name": "Bird", "category": "Animals", "description": "Bird and furry", "stock": 34, "price": 34 },
+    { "id":5, "name": "Camaro", "category": "Cars", "description": "Brown and fast", "stock": 34, "price": 34 },
+    { "id":6, "name": "Pickup", "category": "Cars", "description": "Brown and slow", "stock": 34, "price": 34 },
+    { "id":7, "name": "Sedan", "category": "Cars", "description": "Brown and not like a hot dog", "stock": 34, "price": 34 },
+    { "id":8, "name": "Hot Dog Mobile", "category": "Cars", "description": "Brown and and like a hot dog", "stock": 34, "price": 34 },
+    { "id":9, "name": "Chair", "category": "Furniture", "description": "Brown and sturdy", "stock": 34, "price": 34 },
+    { "id":10, "name": "Swing", "category": "Furniture", "description": "Brown and swingy", "stock": 34, "price": 34 },
+    { "id":11, "name": "Desk", "category": "Furniture", "description": "Brown and flat", "stock": 34, "price": 34 },
+    { "id":12, "name": "I love Lamp", "category": "Furniture", "description": "Shines stuff", "stock": 34, "price": 34 },
+    { "id":13, "name": "Milkshake", "category": "Food", "description": "Brown and flurry", "stock": 34, "price": 34 },
+    { "id":14, "name": "Pizza", "category": "Food", "description": "life blood", "stock": 34, "price": 34 },
+    { "id":15, "name": "Tapioca", "category": "Food", "description": "Brown and furry", "stock": 34, "price": 34 },
+    { "id":16, "name": "Green Onion Pancake", "category": "Food", "description": "Brown and furry", "stock": 34, "price": 34 },
+    { "id":17, "name": "Frizbee Golf", "category": "Sports", "description": "Brown and furry", "stock": 34, "price": 34 },
+    { "id":18, "name": "Ping Pong", "category": "Sports", "description": "Brown and furry", "stock": 34, "price": 34 },
+    { "id":19, "name": "Basketball", "category": "Sports", "description": "Brown and furry", "stock": 34, "price": 34 },
+    { "id":20, "name": "Sleeping", "category": "Sports", "description": "Brown and furry", "stock": 34, "price": 34 }
+  ]
+}

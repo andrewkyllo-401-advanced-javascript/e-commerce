@@ -9,6 +9,7 @@ const mapStateToProps = state => {
   }
 }
 
+
 const Categories = ({ changeCategory, categories }) => {
   return (
     <>
