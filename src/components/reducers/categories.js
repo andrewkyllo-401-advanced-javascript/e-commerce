@@ -1,16 +1,7 @@
-export const allCategories = 
-  { 
-    All: 'All',
-    Animals: 'Animals' ,
-    Cars: 'Cars' ,
-    Furniture: 'Furniture' ,
-    Food: 'Food' ,
-    Sports: 'Sports' 
-  };
-
-
-const categorySelector = ( state = allCategories.All, action) => {
+const categorySelector = ( state = [{id: 1, name : 'All'}], action) => {
   switch (action.type) {
+    case 'GET_ALL_CATEGORIES':
+      return action.payload;
     case 'SELECT-CATEGORY':
       return action.payload;
     default:
