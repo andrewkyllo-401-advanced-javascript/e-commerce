@@ -4,14 +4,14 @@ import { connect } from "react-redux";
 import { deleteProduct, addToCart, getAllProducts } from "../../actions";
 
 const mapStateToProps = state => {
+  console.log()
   return {
     products:
-      state.categories === "All"
+      state.categories.name === "All"
         ? state.products
         : state.products.filter(
-            product => product.category === state.categories
+            product => product.category === state.categories.name
           ),
-    categories: state.categories
   };
 };
 

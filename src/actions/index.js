@@ -8,6 +8,21 @@ export function getAllProducts() {
   }
 }
 
+export function getAllCategories() {
+  return async function(dispatch) {
+    const raw = await fetch('http://localhost:3001/categories')
+    const data = await raw.json()
+    return dispatch(getAllCategoriesAction(data))
+  }
+}
+
+export function getAllCategoriesAction(data) {
+  return {
+    type: "GET_ALL_CATEGORIES",
+    payload: data
+  }
+}
+
 export function addToStock(data) {
   return {
     type: "ADD_TO_STOCK",
@@ -56,10 +71,10 @@ export function removeFromCart(product) {
   }
 }
 
-export function changeCategory(name) {
+export function changeCategory(category) {
   return {
     type: 'SELECT-CATEGORY',
-    payload: name
+    payload: category
   }
 }
 
